@@ -1,0 +1,18 @@
+.container {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 999;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.embeddedContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: transparent;
+}

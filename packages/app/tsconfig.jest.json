@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES2022",
+    "jsx": "react-jsx",
+    "types": ["jest", "node"],
+    "baseUrl": "./",
+    "paths": {
+      "@scaling": ["src/scaling.stub.ts"],
+      "src/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ]
+}

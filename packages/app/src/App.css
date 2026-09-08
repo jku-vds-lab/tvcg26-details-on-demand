@@ -1,0 +1,69 @@
+/* Global reset, sizing, and overflow clipping */
+html,
+body,
+#root {
+  margin: 0 !important;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Styles for the React app */
+.app-container {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app-container .logo {
+  height: 6em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.app-container .logo:hover {
+  filter: drop-shadow(0 0 2em #ff8000);
+}
+
+.app-container .logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* .app-container .card {
+  padding: 2em;
+} */
+
+.app-container .read-the-docs {
+  color: #888;
+}
+
+.app-container button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.app-container button:hover {
+  border-color: #646cff;
+}

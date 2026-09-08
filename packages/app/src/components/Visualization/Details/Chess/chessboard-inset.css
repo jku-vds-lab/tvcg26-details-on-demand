@@ -1,0 +1,9 @@
+/* src/components/Visualization/Details/chessboard-inset.css */
+
+/* Minimal, non-invasive styling. Removes legacy tile color overrides. */
+.chessBoardInset text {
+  font-kerning: normal;
+  letter-spacing: 0.2px;
+}
+
+/* Delete any previous .chessBoardInset .chessTile*, .chessBackground, or highlight rules. */

@@ -1,0 +1,216 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.summary {
+  min-height: auto;
+  padding: 12px 16px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 16px 16px;
+}
+
+.headerText {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--lp-text, #111);
+}
+
+.subtitle {
+  margin: 2px 0 0;
+  color: var(--lp-text-muted, #666);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 14px;
+  border: 1px dashed var(--lp-border, #d0d7de);
+  border-radius: calc(var(--lp-radius, 8px) - 2px);
+  background: var(--lp-surface-soft, rgba(0, 0, 0, 0.02));
+}
+
+.emptyTitle {
+  color: var(--lp-text, #222);
+  font-weight: 600;
+}
+
+.emptyCopy {
+  color: var(--lp-text-muted, #777);
+}
+
+.sessionsList {
+  width: 100%;
+}
+
+.sessionCard {
+  border: 1px solid var(--lp-border, #d0d7de);
+  border-radius: calc(var(--lp-radius, 8px) - 2px);
+  overflow: hidden;
+  background: var(--lp-surface-soft, #fafafa);
+}
+
+.sessionCard[data-autosave="true"] {
+  background: color-mix(in srgb, var(--lp-accent, #007dad) 6%, var(--lp-surface-soft, #fafafa));
+}
+
+.sessionSummary {
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px;
+  text-transform: none;
+  border: 0;
+  border-radius: 0;
+  color: var(--lp-text, #111);
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+}
+
+.sessionSummary:hover {
+  background: color-mix(in srgb, var(--lp-hover, #e8e8e8) 60%, transparent);
+  border: 0;
+}
+
+.sessionSummary:focus-visible {
+  outline: 2px solid var(--lp-accent-soft, rgba(0, 125, 173, 0.2));
+  outline-offset: -2px;
+}
+
+.sessionSummaryText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  min-width: 0;
+  width: 100%;
+}
+
+.sessionName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--lp-text, #111);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: left;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.metaChip {
+  height: 24px;
+  border-radius: 999px;
+  background: var(--lp-surface, #fff);
+  color: var(--lp-text-muted, #666);
+  border: 1px solid var(--lp-border, #d0d7de);
+}
+
+.autosaveChip {
+  height: 24px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--lp-accent, #007dad) 11%, var(--lp-surface, #fff));
+  color: color-mix(in srgb, var(--lp-accent, #007dad) 78%, #111827);
+  border: 1px solid color-mix(in srgb, var(--lp-accent, #007dad) 24%, var(--lp-border, #d0d7de));
+}
+
+.collapsedIcon,
+.expandedIcon {
+  transition: transform 0.18s ease;
+  color: var(--lp-text-muted, #777);
+}
+
+.expandedIcon {
+  transform: rotate(180deg);
+}
+
+.sessionDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 12px 12px;
+  border-top: 1px solid var(--lp-border, #d0d7de);
+  background: var(--lp-surface, #fff);
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 10px;
+  padding-top: 10px;
+}
+
+.detailLabel {
+  color: var(--lp-text-muted, #666);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.detailValue {
+  color: var(--lp-text, #222);
+}
+
+.labelPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.previewTitle {
+  color: var(--lp-text-muted, #666);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.labelChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.labelChip {
+  height: 24px;
+  background: var(--lp-surface-soft, #fafafa);
+  border: 1px solid var(--lp-border, #d0d7de);
+  color: var(--lp-text, #222);
+}
+
+.actionsRow {
+  display: flex;
+  gap: 8px;
+}
+
+.actionsRow :global(.MuiButton-root) {
+  flex: 1;
+  text-transform: none;
+  font-weight: 600;
+}

@@ -1,0 +1,42 @@
+# pyproject.toml
+[build-system]
+requires = ["hatchling>=1.11"]
+build-backend = "hatchling.build"
+
+[project]
+name = "detailviews"
+version = "0.1.0"
+description = "Adaptive detail views for projected trajectory data (Jupyter/anywidget)"
+authors = [
+  { name = "Christian A. Steinparz" }
+]
+readme = "detailviews/README.md"
+license = { text = "MIT" }
+dependencies = [
+  "anywidget >=0.6.0",
+  "traitlets >=5.0.0"
+]
+requires-python = ">=3.10"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Framework :: Jupyter",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Visualization",
+]
+
+# The package ships exactly detailviews/: __init__.py, README, and the
+# self-contained JS bundle under detailviews/static/widget/ (gitignored
+# build output, hence `artifacts`; built by `npm run build:widget` in
+# packages/app). The web-app deployment lives under
+# packages/app/site/ and is not part of the package.
+
+[tool.hatch.build.targets.wheel]
+packages = ["detailviews"]
+artifacts = ["detailviews/static/widget/*"]
+
+[tool.hatch.build.targets.sdist]
+only-include = ["detailviews", "examples/README.md", "examples/simple_widget_demo.ipynb"]
+# Ship the prebuilt JS bundle in the sdist too, so `pip install` from the
+# sdist never needs Node/npm on the user's machine.
+artifacts = ["detailviews/static/widget/*"]

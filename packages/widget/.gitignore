@@ -1,0 +1,8 @@
+# anywidget JS bundle built by `npm run build:widget` in packages/app
+# (vite.config.widget.ts outDir points here)
+detailviews/static/widget/
+
+# python -m build output
+dist/
+*.egg-info/
+__pycache__/

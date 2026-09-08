@@ -1,0 +1,100 @@
+{
+  "multiSeedExclusions": {
+    "points": [
+      [0, 0, 0],
+      [1, 0, 0],
+      [0, 0, 5],
+      [0, 1, 1],
+      [1, 1, 1],
+      [1, 1, 1],
+      [2, 1, 2],
+      [3, 3, 2],
+      [5, 5, 3],
+      [0.5, 0.5, 4]
+    ],
+    "ids": [3, 10, 17, 24, 31, 38, 45, 52, 59, 66],
+    "knn": [
+      [0, 2, 1],
+      [1, 0, 2],
+      [2, 0, 1],
+      [3, 4, 5],
+      [4, 5, 3],
+      [5, 4, 3],
+      [6, 7],
+      [7, 6],
+      [8],
+      [9, 4, 0]
+    ],
+    "seeds": [0, 6],
+    "labeled": [2],
+    "pinned": [8],
+    "settings": {
+      "proximitySlider": 0.8,
+      "pastSlider": 0.6,
+      "futureSlider": 0.7,
+      "maxEmbeddingDistance": 4,
+      "grayOutDoiThreshold": 0.05,
+      "annotationDoiThreshold": 0.7,
+      "insetDoiThreshold": 0.9
+    }
+  },
+  "nonContiguousLines": {
+    "points": [
+      [0, 0, 0],
+      [1, 0, 0],
+      [0, 5, 1],
+      [1, 5, 1],
+      [2, 5, 1],
+      [2, 0, 0],
+      [3, 0, 0],
+      [5, 5, 2]
+    ],
+    "ids": [3, 10, 17, 24, 31, 38, 45, 52],
+    "knn": [
+      [0, 1],
+      [1, 0, 5],
+      [2, 3],
+      [3, 2, 4],
+      [4, 3],
+      [5, 6, 1],
+      [6, 5],
+      [7]
+    ],
+    "seeds": [0],
+    "labeled": [],
+    "pinned": [],
+    "settings": {
+      "proximitySlider": 0.75,
+      "pastSlider": 0.6,
+      "futureSlider": 0.85,
+      "maxEmbeddingDistance": 6,
+      "grayOutDoiThreshold": 0.05,
+      "annotationDoiThreshold": 0.7,
+      "insetDoiThreshold": 0.9
+    }
+  },
+  "trajectoryOnly": {
+    "points": [
+      [0, 0, 0],
+      [1, 0, 0],
+      [2, 0, 0],
+      [0, 1, 1],
+      [1, 1, 1],
+      [2, 1, 1]
+    ],
+    "ids": [3, 10, 17, 24, 31, 38],
+    "knn": [],
+    "seeds": [0, 5],
+    "labeled": [],
+    "pinned": [],
+    "settings": {
+      "proximitySlider": 0.8,
+      "pastSlider": 0.65,
+      "futureSlider": 0.7,
+      "maxEmbeddingDistance": 4,
+      "grayOutDoiThreshold": 0.05,
+      "annotationDoiThreshold": 0.7,
+      "insetDoiThreshold": 0.9
+    }
+  }
+}

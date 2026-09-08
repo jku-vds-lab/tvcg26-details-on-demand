@@ -1,0 +1,31 @@
+/* Scope everything to the board SVG to avoid leaking styles. */
+.chessBoardInset .chessTile {
+  fill: #769455;
+}
+
+.chessBoardInset .chessTile.light {
+  fill: #EAEACF;
+}
+
+.chessBoardInset .chessTile.highlight {
+  fill: #F5F682;
+}
+
+.chessBoardInset .chessTile.highlight.dark {
+  fill: #B9CA43;
+}
+
+.chessBoardInset .chessBackground {
+  fill: #302E2B;
+}
+
+/* Keep the old outline recipe but scoped;
+   we don't use this class for annotations anymore. */
+.chessBoardInset .text.outline {
+  paint-order: stroke;
+  stroke: white;
+  fill: grey;
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+}

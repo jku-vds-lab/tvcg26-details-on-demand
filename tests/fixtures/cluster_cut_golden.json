@@ -1,0 +1,892 @@
+{
+  "dataset": "packages/app/public/data/combination-example-2_knng_splines_stability.json.gz",
+  "leafOrder": {
+    "points": [
+      17,
+      6,
+      11,
+      9,
+      16,
+      7,
+      0,
+      8,
+      5,
+      15,
+      2,
+      13,
+      3,
+      10,
+      12,
+      14,
+      1,
+      4
+    ],
+    "midpoints": [
+      3,
+      0,
+      4,
+      1,
+      2
+    ]
+  },
+  "cases": [
+    {
+      "scenario": {
+        "name": "points-overview-default",
+        "tree": "points",
+        "viewbox": {
+          "minX": -7.800000000000004,
+          "maxX": 397.8,
+          "minY": 55.3,
+          "maxY": 375.7
+        },
+        "canvasWidth": 1600,
+        "canvasHeight": 1000,
+        "splitThresholdFraction": 0.03,
+        "gapDisclosurePx": 48,
+        "focusActive": false
+      },
+      "candidates": [
+        {
+          "uid": "0x2",
+          "leafRanges": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "uid": "0x4",
+          "leafRanges": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "uid": "0x6",
+          "leafRanges": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "uid": "0x8",
+          "leafRanges": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "uid": "0xA",
+          "leafRanges": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "uid": "0xC",
+          "leafRanges": [
+            [
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "uid": "0xE",
+          "leafRanges": [
+            [
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "uid": "0x10",
+          "leafRanges": [
+            [
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "uid": "0x12",
+          "leafRanges": [
+            [
+              8,
+              9
+            ]
+          ]
+        },
+        {
+          "uid": "0x14",
+          "leafRanges": [
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "uid": "0x16",
+          "leafRanges": [
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "uid": "0x18",
+          "leafRanges": [
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        {
+          "uid": "0x1A",
+          "leafRanges": [
+            [
+              12,
+              15
+            ]
+          ]
+        },
+        {
+          "uid": "0x20",
+          "leafRanges": [
+            [
+              15,
+              16
+            ]
+          ]
+        },
+        {
+          "uid": "0x22",
+          "leafRanges": [
+            [
+              16,
+              17
+            ]
+          ]
+        },
+        {
+          "uid": "0x23",
+          "leafRanges": [
+            [
+              17,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "points-overview-focus-gap",
+        "tree": "points",
+        "viewbox": {
+          "minX": -7.800000000000004,
+          "maxX": 397.8,
+          "minY": 55.3,
+          "maxY": 375.7
+        },
+        "canvasWidth": 1600,
+        "canvasHeight": 1000,
+        "splitThresholdFraction": 0.03,
+        "gapDisclosurePx": 48,
+        "focusActive": true
+      },
+      "candidates": [
+        {
+          "uid": "0x2",
+          "leafRanges": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "uid": "0x4",
+          "leafRanges": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "uid": "0x6",
+          "leafRanges": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "uid": "0x8",
+          "leafRanges": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "uid": "0xA",
+          "leafRanges": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "uid": "0xC",
+          "leafRanges": [
+            [
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "uid": "0xE",
+          "leafRanges": [
+            [
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "uid": "0x10",
+          "leafRanges": [
+            [
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "uid": "0x12",
+          "leafRanges": [
+            [
+              8,
+              9
+            ]
+          ]
+        },
+        {
+          "uid": "0x14",
+          "leafRanges": [
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "uid": "0x16",
+          "leafRanges": [
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "uid": "0x18",
+          "leafRanges": [
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        {
+          "uid": "0x1A",
+          "leafRanges": [
+            [
+              12,
+              15
+            ]
+          ]
+        },
+        {
+          "uid": "0x20",
+          "leafRanges": [
+            [
+              15,
+              16
+            ]
+          ]
+        },
+        {
+          "uid": "0x22",
+          "leafRanges": [
+            [
+              16,
+              17
+            ]
+          ]
+        },
+        {
+          "uid": "0x23",
+          "leafRanges": [
+            [
+              17,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "points-overview-huge-threshold",
+        "tree": "points",
+        "viewbox": {
+          "minX": -7.800000000000004,
+          "maxX": 397.8,
+          "minY": 55.3,
+          "maxY": 375.7
+        },
+        "canvasWidth": 1600,
+        "canvasHeight": 1000,
+        "splitThresholdFraction": 10,
+        "gapDisclosurePx": 0,
+        "focusActive": false
+      },
+      "candidates": [
+        {
+          "uid": "0x1",
+          "leafRanges": [
+            [
+              0,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "points-overview-tiny-threshold",
+        "tree": "points",
+        "viewbox": {
+          "minX": -7.800000000000004,
+          "maxX": 397.8,
+          "minY": 55.3,
+          "maxY": 375.7
+        },
+        "canvasWidth": 1600,
+        "canvasHeight": 1000,
+        "splitThresholdFraction": 1e-7,
+        "gapDisclosurePx": 0,
+        "focusActive": false
+      },
+      "candidates": [
+        {
+          "uid": "0x2",
+          "leafRanges": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "uid": "0x4",
+          "leafRanges": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "uid": "0x6",
+          "leafRanges": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "uid": "0x8",
+          "leafRanges": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "uid": "0xA",
+          "leafRanges": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "uid": "0xC",
+          "leafRanges": [
+            [
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "uid": "0xE",
+          "leafRanges": [
+            [
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "uid": "0x10",
+          "leafRanges": [
+            [
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "uid": "0x12",
+          "leafRanges": [
+            [
+              8,
+              9
+            ]
+          ]
+        },
+        {
+          "uid": "0x14",
+          "leafRanges": [
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "uid": "0x16",
+          "leafRanges": [
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "uid": "0x18",
+          "leafRanges": [
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        {
+          "uid": "0x1C",
+          "leafRanges": [
+            [
+              12,
+              13
+            ]
+          ]
+        },
+        {
+          "uid": "0x1D",
+          "leafRanges": [
+            [
+              13,
+              14
+            ]
+          ]
+        },
+        {
+          "uid": "0x1E",
+          "leafRanges": [
+            [
+              14,
+              15
+            ]
+          ]
+        },
+        {
+          "uid": "0x20",
+          "leafRanges": [
+            [
+              15,
+              16
+            ]
+          ]
+        },
+        {
+          "uid": "0x22",
+          "leafRanges": [
+            [
+              16,
+              17
+            ]
+          ]
+        },
+        {
+          "uid": "0x23",
+          "leafRanges": [
+            [
+              17,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "points-zoomed-default",
+        "tree": "points",
+        "viewbox": {
+          "minX": 110.5,
+          "maxX": 245.70000000000002,
+          "minY": 148.75,
+          "maxY": 255.55
+        },
+        "canvasWidth": 1600,
+        "canvasHeight": 1000,
+        "splitThresholdFraction": 0.03,
+        "gapDisclosurePx": 48,
+        "focusActive": true
+      },
+      "candidates": [
+        {
+          "uid": "0x14",
+          "leafRanges": [
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "uid": "0x20",
+          "leafRanges": [
+            [
+              15,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "points-zoomed-small-canvas",
+        "tree": "points",
+        "viewbox": {
+          "minX": 110.5,
+          "maxX": 245.70000000000002,
+          "minY": 148.75,
+          "maxY": 255.55
+        },
+        "canvasWidth": 400,
+        "canvasHeight": 300,
+        "splitThresholdFraction": 0.03,
+        "gapDisclosurePx": 24,
+        "focusActive": true
+      },
+      "candidates": [
+        {
+          "uid": "0x14",
+          "leafRanges": [
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "uid": "0x20",
+          "leafRanges": [
+            [
+              15,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "midpoints-overview-default",
+        "tree": "midpoints",
+        "viewbox": {
+          "minX": -7.800000000000004,
+          "maxX": 397.8,
+          "minY": 55.3,
+          "maxY": 375.7
+        },
+        "canvasWidth": 1600,
+        "canvasHeight": 1000,
+        "splitThresholdFraction": 0.03,
+        "gapDisclosurePx": 48,
+        "focusActive": false
+      },
+      "candidates": [
+        {
+          "uid": "0x2",
+          "leafRanges": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "uid": "0x4",
+          "leafRanges": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "uid": "0x5",
+          "leafRanges": [
+            [
+              2,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "midpoints-overview-focus-gap",
+        "tree": "midpoints",
+        "viewbox": {
+          "minX": -7.800000000000004,
+          "maxX": 397.8,
+          "minY": 55.3,
+          "maxY": 375.7
+        },
+        "canvasWidth": 1600,
+        "canvasHeight": 1000,
+        "splitThresholdFraction": 0.03,
+        "gapDisclosurePx": 48,
+        "focusActive": true
+      },
+      "candidates": [
+        {
+          "uid": "0x2",
+          "leafRanges": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "uid": "0x4",
+          "leafRanges": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "uid": "0x6",
+          "leafRanges": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "uid": "0x7",
+          "leafRanges": [
+            [
+              3,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "midpoints-overview-huge-threshold",
+        "tree": "midpoints",
+        "viewbox": {
+          "minX": -7.800000000000004,
+          "maxX": 397.8,
+          "minY": 55.3,
+          "maxY": 375.7
+        },
+        "canvasWidth": 1600,
+        "canvasHeight": 1000,
+        "splitThresholdFraction": 10,
+        "gapDisclosurePx": 0,
+        "focusActive": false
+      },
+      "candidates": [
+        {
+          "uid": "0x1",
+          "leafRanges": [
+            [
+              0,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "midpoints-overview-tiny-threshold",
+        "tree": "midpoints",
+        "viewbox": {
+          "minX": -7.800000000000004,
+          "maxX": 397.8,
+          "minY": 55.3,
+          "maxY": 375.7
+        },
+        "canvasWidth": 1600,
+        "canvasHeight": 1000,
+        "splitThresholdFraction": 1e-7,
+        "gapDisclosurePx": 0,
+        "focusActive": false
+      },
+      "candidates": [
+        {
+          "uid": "0x2",
+          "leafRanges": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "uid": "0x4",
+          "leafRanges": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "uid": "0x6",
+          "leafRanges": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "uid": "0x8",
+          "leafRanges": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "uid": "0x9",
+          "leafRanges": [
+            [
+              4,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "midpoints-zoomed-default",
+        "tree": "midpoints",
+        "viewbox": {
+          "minX": 110.5,
+          "maxX": 245.70000000000002,
+          "minY": 148.75,
+          "maxY": 255.55
+        },
+        "canvasWidth": 1600,
+        "canvasHeight": 1000,
+        "splitThresholdFraction": 0.03,
+        "gapDisclosurePx": 48,
+        "focusActive": true
+      },
+      "candidates": [
+        {
+          "uid": "0x7",
+          "leafRanges": [
+            [
+              3,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "midpoints-zoomed-small-canvas",
+        "tree": "midpoints",
+        "viewbox": {
+          "minX": 110.5,
+          "maxX": 245.70000000000002,
+          "minY": 148.75,
+          "maxY": 255.55
+        },
+        "canvasWidth": 400,
+        "canvasHeight": 300,
+        "splitThresholdFraction": 0.03,
+        "gapDisclosurePx": 24,
+        "focusActive": true
+      },
+      "candidates": [
+        {
+          "uid": "0x7",
+          "leafRanges": [
+            [
+              3,
+              5
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
