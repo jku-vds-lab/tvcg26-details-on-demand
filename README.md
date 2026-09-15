@@ -1,4 +1,4 @@
-# Adaptive Detail Views
+# Details on Demand
 
 A scatterplot of projected data with automatically generated and placed
 annotations. Clusters get contours, labels, and small detail visualizations

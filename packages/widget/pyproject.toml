@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 [project]
 name = "detailviews"
 version = "0.1.0"
-description = "Adaptive detail views for projected trajectory data (Jupyter/anywidget)"
+description = "Details on Demand: adaptive detail views for projected trajectory data (Jupyter/anywidget)"
 authors = [
   { name = "Christian A. Steinparz" }
 ]

@@ -1,6 +1,6 @@
 # detailviews
 
-Adaptive Detail Views as a Jupyter widget. The same visualization as the web
+Details on Demand as a Jupyter widget. The same visualization as the web
 app, rendered in a notebook output cell from a DataFrame or a list of records.
 The project itself is described in the repository root README.
 

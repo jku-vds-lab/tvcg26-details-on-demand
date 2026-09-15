@@ -25,7 +25,7 @@ export const PAGE_TITLE_SUB =
 export const PAGE_TITLE = `${PAGE_TITLE_MAIN}: ${PAGE_TITLE_SUB}`;
 
 /** Deployed app name; keep in sync with `site.config.json` (JSON imports are off in tsconfig). */
-export const TOOL_NAME = "Adaptive Detail Views";
+export const TOOL_NAME = "Details on Demand";
 
 /** Lab-website base that hosts the `\figliveat{<slug>}` redirects. */
 const REDIRECT_BASE = "https://jku-vds-lab.github.io";
