@@ -32,11 +32,8 @@ the default tabular detail views. Neither has trajectories; `dataset_type` (or
 `image_shape`, which selects the `"image"` type) is what selects the detail-view
 renderer.
 
-## Publish rehearsal
+## Install by name
 
-[`publish_preview.ipynb`](publish_preview.ipynb) rehearses the post-PyPI
-experience without publishing anything: build the wheel (`npm run build:widget`,
-`python -m build`), then run the notebook in any Jupyter — its `%pip` cell
-installs `detailviews` by name from the local `dist/` folder, loads
-`sample_trajectories.csv` with pandas, and shows the widget. After the real
-publish the install cell becomes plain `%pip install detailviews`.
+[`publish_preview.ipynb`](publish_preview.ipynb) shows the plain install-by-name
+path: its `%pip install detailviews` cell pulls the package from PyPI, then it loads
+`sample_trajectories.csv` with pandas and shows the widget. No build step needed.

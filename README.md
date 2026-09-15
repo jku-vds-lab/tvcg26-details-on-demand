@@ -60,8 +60,7 @@ df = pd.read_csv("my_projection.csv")   # columns: x, y, episode, step, ...
 DetailViewsWidget.from_dataframe(df, x="x", y="y", trajectory="episode", order="step")
 ```
 
-To build the package from this repository instead (for development, or before
-the PyPI release):
+To build the package from this repository instead (for development):
 
 ```bash
 npm run build:widget            # self-contained widget bundle -> packages/widget/detailviews/static/widget/

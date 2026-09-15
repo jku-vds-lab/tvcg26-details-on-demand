@@ -22,7 +22,7 @@ const DOI_URL = "";
 const OSF_URL = "";
 // PLACEHOLDER — demo video link TBD; while empty the hero button scrolls to the Video section.
 const VIDEO_URL = "";
-// Tentative PyPI name (CS 2026-07-11); tracks the pip package in packages/widget/detailviews/.
+// PyPI name; tracks the pip package in packages/widget/detailviews/.
 const PACKAGE_NAME = "detailviews";
 const GITHUB_URL = "https://github.com/jku-vds-lab/tvcg26-details-on-demand";
 // PLACEHOLDER — complete author list / year once the paper is published.
@@ -35,7 +35,7 @@ const BIBTEX = `@article{steinparz2026details,
   note    = {TODO: volume, pages, DOI}
 }`;
 
-const PIP_SNIPPET = `pip install ${PACKAGE_NAME}  # coming soon`;
+const PIP_SNIPPET = `pip install ${PACKAGE_NAME}`;
 
 const NOTEBOOK_SNIPPET = `import pandas as pd
 from detailviews import DetailViewsWidget
@@ -247,7 +247,7 @@ export default function LandingPage() {
         <h2>Python package &amp; Jupyter widget</h2>
         <p className="landing-section-intro">
           The tool also runs as an <a href="https://anywidget.dev">anywidget</a>-based Jupyter
-          widget; a pip package is coming soon. Hand it a DataFrame with a 2D projection and it
+          widget, published on PyPI as <code>{PACKAGE_NAME}</code>. Hand it a DataFrame with a 2D projection and it
           computes the kNN graph, trajectory splines, and HDBSCAN clustering inside the widget,
           off the UI thread.
         </p>
