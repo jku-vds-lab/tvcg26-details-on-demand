@@ -25,6 +25,10 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Visualization",
 ]
 
+[project.urls]
+Homepage = "https://jku-vds-lab.at/tvcg26-steinparz/material/"
+Repository = "https://github.com/jku-vds-lab/tvcg26-details-on-demand"
+
 # The package ships exactly detailviews/: __init__.py, README, and the
 # self-contained JS bundle under detailviews/static/widget/ (gitignored
 # build output, hence `artifacts`; built by `npm run build:widget` in
