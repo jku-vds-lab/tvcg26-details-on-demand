@@ -355,6 +355,9 @@ export function computeVisualElementsCost(
       h: sbA.height,
     };
     // ── Obstacle penalty (screen-space) ──────────────────────────────────
+    // Obstacle boxes are the midpoint difference-inset boxes from
+    // buildMidpointObstacles; the derived-inset pair loop below penalizes the
+    // same boxes.
     if (obstacles && obstacles.length) {
       const oA = { minX: boxA.minX, minY: boxA.minY, maxX: boxA.maxX, maxY: boxA.maxY };
       let oCost = 0;
@@ -370,6 +373,9 @@ export function computeVisualElementsCost(
       }
       if (oCost > 0) {
          
+        // wOI: at the default weight this soft barrier is dominated by
+        // hardInsetOverlapPenalty, which applies the same barrier scaled by the
+        // hard penalty, so the term is effectively superseded; kept for experiments.
         cost += w.wOI * oCost;
       }
     }
@@ -407,6 +413,8 @@ export function computeVisualElementsCost(
     const DS = isSingle
       ? Math.max(0, 2 * safeR - dcs) / safeR
       : Math.max(0, contourTarget - radialDistance) / safeR;
+    // wDS (distance slack) is a default-0 optional variant of the wD distance
+    // term, unused in the default configuration.
     cost += w.wD * D + w.wM * M + w.wOS * OS + w.wDS * DS;
 
     if (A.type === "inset" && contours && contours.length && hardForeignContourOverlapPenalty > 0) {
@@ -487,6 +495,11 @@ export function computeVisualElementsCost(
         cost += hardInsetOverlapPenalty * (1 + overlapPenalty);
       }
 
+      // wOI: at the default weight this soft barrier is dominated by
+      // hardInsetOverlapPenalty above, which applies the same barrier scaled by
+      // the hard penalty, so the term is effectively superseded; kept for experiments.
+      // wDI (center repulsion) is a default-0 optional variant of the overlap
+      // terms (wOI / hard overlap), unused in the default configuration.
       cost += w.wOI * overlapPenalty + w.wDI * DI;
     }
   }
@@ -546,6 +559,8 @@ export function computeVisualElementsCost(
             : 0;
         const oiClamped = Math.max(0, Math.min(0.999999, oiRaw));
         const overlapPenaltyD = -Math.log(1 - oiClamped);
+        // wOI: superseded at the default weight by the hard barrier on the next
+        // line; kept for experiments.
         cost += w.wOI * overlapPenaltyD;
         if (oiRaw > 0) cost += hardInsetOverlapPenalty * (1 + overlapPenaltyD);
       }
@@ -569,6 +584,8 @@ export function computeVisualElementsCost(
             : 0;
         const oiClamped = Math.max(0, Math.min(0.999999, oiRaw));
         const overlapPenaltyD = -Math.log(1 - oiClamped);
+        // wOI: superseded at the default weight by the hard barrier on the next
+        // line; kept for experiments.
         cost += w.wOI * overlapPenaltyD;
         if (oiRaw > 0) cost += hardInsetOverlapPenalty * (1 + overlapPenaltyD);
       }
@@ -595,6 +612,8 @@ export function computeVisualElementsCost(
       rtreeDensityCache.set(key, score);
 
       if (hits > 0) {
+        // hardScatterOverlapPenalty is a default-0 optional variant of the wRTree
+        // density term, unused in the default configuration.
         cost += hardScatterOverlapPenalty;
       }
     }
@@ -605,6 +624,8 @@ export function computeVisualElementsCost(
     state.forEach(accumulateRTreeCost);
   }
 
+  // wL (soft leader crossings) is a default-0 optional variant of
+  // hardLeaderCrossingPenalty, unused in the default configuration.
   return cost + w.wL * crossings;
 }
 

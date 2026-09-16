@@ -58,14 +58,14 @@ export interface VisualizationSettings {
   edgeScaleExponent: number;
 
   /** INSET OPTIMIZATION */
-  optimizationWeightD: number;
-  optimizationWeightM: number;
+  optimizationWeightDistance: number;
+  optimizationWeightMentalMap: number;
   optimizationWeightL: number;
-  optimizationWeightOS: number;
+  optimizationWeightSourceOverlap: number;
   optimizationWeightDS: number;
   optimizationWeightOI: number;
   optimizationWeightDI: number;
-  optimizationWeightRTree: number;
+  optimizationWeightDataOcclusion: number;
   hardInsetOverlapPenalty: number;
   hardLeaderCrossingPenalty: number;
   hardScatterOverlapPenalty: number;
@@ -143,14 +143,16 @@ export const initialVisualizationSettings: VisualizationSettings = {
   edgeInsetMaxScale: 1.0,
   edgeScaleExponent: 0.5,
 
-  optimizationWeightD: 5.0,
-  optimizationWeightM: 0,
+  // Active by default: Distance 5, OI 2 and the three hard penalties at 5000
+  // (inset overlap, leader crossing, foreign contour); every other weight is 0.
+  optimizationWeightDistance: 5.0,
+  optimizationWeightMentalMap: 0,
   optimizationWeightL: 0,
-  optimizationWeightOS: 0,
+  optimizationWeightSourceOverlap: 0,
   optimizationWeightDS: 0,
   optimizationWeightOI: 2.0,
   optimizationWeightDI: 0,
-  optimizationWeightRTree: 0,
+  optimizationWeightDataOcclusion: 0,
   hardInsetOverlapPenalty: 5000,
   hardLeaderCrossingPenalty: 5000,
   hardScatterOverlapPenalty: 0,

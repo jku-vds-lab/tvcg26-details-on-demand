@@ -8,14 +8,14 @@ import LabeledSlider from './clusterSettings/controls/LabeledSlider';
 import SettingsSegmentedControl from './clusterSettings/controls/SettingsSegmentedControl';
 
 type OptimizationWeightKey =
-  | 'optimizationWeightD'
-  | 'optimizationWeightM'
+  | 'optimizationWeightDistance'
+  | 'optimizationWeightMentalMap'
   | 'optimizationWeightL'
-  | 'optimizationWeightOS'
+  | 'optimizationWeightSourceOverlap'
   | 'optimizationWeightDS'
   | 'optimizationWeightOI'
   | 'optimizationWeightDI'
-  | 'optimizationWeightRTree'
+  | 'optimizationWeightDataOcclusion'
   | 'hardInsetOverlapPenalty'
   | 'hardLeaderCrossingPenalty'
   | 'hardScatterOverlapPenalty'
@@ -53,14 +53,14 @@ const CONTOUR_TARGET_SLIDER_CONFIG: SliderConfig = {
 };
 
 const weightOptions: Array<{ label: string; key: OptimizationWeightKey; config: SliderConfig }> = [
-  { label: 'Distance Weight', key: 'optimizationWeightD', config: WEIGHT_SLIDER_CONFIG },
-  { label: 'Movement Weight', key: 'optimizationWeightM', config: WEIGHT_SLIDER_CONFIG },
+  { label: 'Distance Weight', key: 'optimizationWeightDistance', config: WEIGHT_SLIDER_CONFIG },
+  { label: 'Movement Weight', key: 'optimizationWeightMentalMap', config: WEIGHT_SLIDER_CONFIG },
   { label: 'Leader Weight', key: 'optimizationWeightL', config: WEIGHT_SLIDER_CONFIG },
-  { label: 'Overlap Source Weight', key: 'optimizationWeightOS', config: WEIGHT_SLIDER_CONFIG },
+  { label: 'Overlap Source Weight', key: 'optimizationWeightSourceOverlap', config: WEIGHT_SLIDER_CONFIG },
   { label: 'Distance Contour Weight', key: 'optimizationWeightDS', config: WEIGHT_SLIDER_CONFIG },
   { label: 'Overlap Inset Weight', key: 'optimizationWeightOI', config: WEIGHT_SLIDER_CONFIG },
   { label: 'Distance Inset Weight', key: 'optimizationWeightDI', config: WEIGHT_SLIDER_CONFIG },
-  { label: 'Overlap Scatterplot Weight', key: 'optimizationWeightRTree', config: WEIGHT_SLIDER_CONFIG },
+  { label: 'Overlap Scatterplot Weight', key: 'optimizationWeightDataOcclusion', config: WEIGHT_SLIDER_CONFIG },
   { label: 'Hard Inset Overlap Penalty', key: 'hardInsetOverlapPenalty', config: HARD_PENALTY_SLIDER_CONFIG },
   { label: 'Hard Leader Crossing Penalty', key: 'hardLeaderCrossingPenalty', config: HARD_PENALTY_SLIDER_CONFIG },
   { label: 'Hard Scatter Overlap Penalty', key: 'hardScatterOverlapPenalty', config: HARD_PENALTY_SLIDER_CONFIG },
@@ -87,14 +87,14 @@ const annealingOptions: Array<{ label: string; key: AnnealingKey; config: Slider
 ];
 
 const WEIGHT_DEFAULTS: Pick<RootState['visualizationSettings'], OptimizationWeightKey> = {
-  optimizationWeightD: initialVisualizationSettings.optimizationWeightD,
-  optimizationWeightM: initialVisualizationSettings.optimizationWeightM,
+  optimizationWeightDistance: initialVisualizationSettings.optimizationWeightDistance,
+  optimizationWeightMentalMap: initialVisualizationSettings.optimizationWeightMentalMap,
   optimizationWeightL: initialVisualizationSettings.optimizationWeightL,
-  optimizationWeightOS: initialVisualizationSettings.optimizationWeightOS,
+  optimizationWeightSourceOverlap: initialVisualizationSettings.optimizationWeightSourceOverlap,
   optimizationWeightDS: initialVisualizationSettings.optimizationWeightDS,
   optimizationWeightOI: initialVisualizationSettings.optimizationWeightOI,
   optimizationWeightDI: initialVisualizationSettings.optimizationWeightDI,
-  optimizationWeightRTree: initialVisualizationSettings.optimizationWeightRTree,
+  optimizationWeightDataOcclusion: initialVisualizationSettings.optimizationWeightDataOcclusion,
   hardInsetOverlapPenalty: initialVisualizationSettings.hardInsetOverlapPenalty,
   hardLeaderCrossingPenalty: initialVisualizationSettings.hardLeaderCrossingPenalty,
   hardScatterOverlapPenalty: initialVisualizationSettings.hardScatterOverlapPenalty,
