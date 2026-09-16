@@ -1,4 +1,4 @@
-import { l, a as o, b as u, c as d } from "./index-C3vJAUio.js";
+import { l, a as o, b as u, c as d } from "./index-BEInxknA.js";
 class k {
   constructor(t) {
     this.onResult = t, this.worker = null, this.revision = -1, this.length = 0, this.tickCounter = 0, this.inFlightId = 0, this.latest = l(), this.spare = null, this.sentAtMs = 0, this.inFlightParams = null;
