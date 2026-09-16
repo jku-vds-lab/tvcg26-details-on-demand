@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./LandingPage.css";
 import {
   FIGURE_CARDS,
@@ -12,16 +12,17 @@ import {
   redirectUrl,
 } from "./landingContent";
 
-// PLACEHOLDER — fill in before release (empty string renders a "coming soon" chip).
-const PAPER_PDF_URL = "";
+// The submitted manuscript, served next to the app.
+const PAPER_PDF_URL = "paper/details-where-they-matter.pdf";
 // PLACEHOLDER — fill in before release.
 const ARXIV_URL = "";
 // PLACEHOLDER — fill in before release.
 const DOI_URL = "";
-// PLACEHOLDER — fill in before release.
-const OSF_URL = "";
-// PLACEHOLDER — demo video link TBD; while empty the hero button scrolls to the Video section.
-const VIDEO_URL = "";
+const SUPPLEMENT_PDF_URL = "paper/details-where-they-matter-supplement.pdf";
+// The player is embedded from this id; the lab-website redirect is the stable
+// public link, so the paper and the lab site survive a re-upload.
+const VIDEO_ID = "PFmVoHGaIc8";
+const VIDEO_URL = redirectUrl("video");
 // PyPI name; tracks the pip package in packages/widget/detailviews/.
 const PACKAGE_NAME = "detailviews";
 const GITHUB_URL = "https://github.com/jku-vds-lab/tvcg26-details-on-demand";
@@ -47,6 +48,87 @@ DetailViewsWidget.from_dataframe(
     trajectory="episode", order="step",  # optional: trajectory roles
     action="action", label="label",      # optional: annotation columns
 )`;
+
+/**
+ * Click-to-play player. Until someone clicks we show our own title-card still,
+ * so the page loads no YouTube resources and none of the player's own overlay
+ * chrome (title bar, channel, share buttons) sits on top of the poster.
+ */
+function VideoPlayer() {
+  const [playing, setPlaying] = useState(false);
+  if (!playing) {
+    return (
+      <button
+        type="button"
+        className="landing-video landing-video-poster"
+        onClick={() => setPlaying(true)}
+        aria-label="Play the demo video"
+      >
+        <img src="landing/video-poster.jpg" alt="" />
+        <span className="landing-video-play" aria-hidden="true" />
+      </button>
+    );
+  }
+  return (
+    <div className="landing-video">
+      <iframe
+        src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1`}
+        title="Demo video"
+        allow="autoplay; encrypted-media; picture-in-picture; web-share; fullscreen"
+        allowFullScreen
+      />
+    </div>
+  );
+}
+
+/** Icon links under the logo row, matching the lab's other project pages. */
+const ICON_LINKS = [
+  {
+    name: "Source code on GitHub",
+    href: GITHUB_URL,
+    icon: "landing/icons/github.svg",
+  },
+  { name: "Demo video on YouTube", href: VIDEO_URL, icon: "landing/icons/youtube.svg" },
+  {
+    name: "JKU Linz website",
+    href: "https://www.jku.at",
+    icon: "landing/icons/university.svg",
+  },
+];
+
+/** Institutions behind the work, shown as logos in the footer. */
+export const INSTITUTIONS = [
+  {
+    name: "Johannes Kepler University Linz",
+    href: "https://www.jku.at",
+    logo: "landing/logos/jku.png",
+  },
+  {
+    name: "JKU Visual Data Science Lab",
+    href: "https://jku-vds-lab.at",
+    logo: "landing/logos/jku-vds-lab.svg",
+  },
+  {
+    name: "ETH Zurich",
+    href: "https://ethz.ch",
+    logo: "landing/logos/eth-zurich.svg",
+  },
+  {
+    name: "IVIA Lab, ETH Zurich",
+    href: "https://ivia.ethz.ch",
+    logo: "landing/logos/ivia.png",
+  },
+  {
+    name: "TU Wien",
+    href: "https://www.tuwien.at",
+    logo: "landing/logos/tu-wien.svg",
+  },
+  {
+    name: "Computer Graphics, TU Wien",
+    href: "https://www.cg.tuwien.ac.at",
+    logo: "landing/logos/tu-wien-cg.svg",
+  },
+];
 
 /** External link, or a "coming soon" chip while the URL is still a placeholder. */
 function LinkOrSoon({ href, label }: { href: string; label: string }) {
@@ -91,6 +173,7 @@ export default function LandingPage() {
         <nav className="landing-topbar-nav">
           <a href="#/figures">Figures</a>
           <a href="#/iris">Upload data</a>
+          <a href="#/video">Video</a>
           <a href="#/paper">Paper</a>
           <a href="#/python">Python</a>
           <a className="landing-btn landing-btn-primary" href=".">
@@ -115,11 +198,7 @@ export default function LandingPage() {
           <a className="landing-btn landing-btn-outline" href="#/figures">
             Figure demos
           </a>
-          <a
-            className="landing-btn landing-btn-outline"
-            href={VIDEO_URL || "#/video"}
-            {...(VIDEO_URL ? { target: "_blank", rel: "noreferrer" } : {})}
-          >
+          <a className="landing-btn landing-btn-outline" href="#/video">
             Video
           </a>
           <a className="landing-btn landing-btn-outline" href="#/paper">
@@ -207,9 +286,12 @@ export default function LandingPage() {
 
       <section className="landing-section" id="/video">
         <h2>Video</h2>
+        <VideoPlayer />
         <ul className="landing-links">
           <li>
-            <LinkOrSoon href={VIDEO_URL} label="Demo video" />
+            <a href={VIDEO_URL} target="_blank" rel="noreferrer">
+              Watch on YouTube
+            </a>
           </li>
         </ul>
       </section>
@@ -227,7 +309,10 @@ export default function LandingPage() {
             <LinkOrSoon href={DOI_URL} label="Publisher version (DOI)" />
           </li>
           <li>
-            <LinkOrSoon href={OSF_URL} label="Supplemental materials (OSF)" />
+            <LinkOrSoon
+              href={SUPPLEMENT_PDF_URL}
+              label="Supplemental material (PDF)"
+            />
           </li>
           <li>
             <a href={GITHUB_URL} target="_blank" rel="noreferrer">
@@ -279,33 +364,29 @@ export default function LandingPage() {
       </section>
 
       <footer className="landing-footer">
-        <p>
-          Developed at the{" "}
-          <a href="https://jku-vds-lab.at" target="_blank" rel="noreferrer">
-            JKU Visual Data Science Lab
-          </a>
-          ,{" "}
-          <a href="https://ivia.ch/" target="_blank" rel="noreferrer">
-            ETH Zurich
-          </a>
-          ,{" "}
-          <a href="https://www.cg.tuwien.ac.at/" target="_blank" rel="noreferrer">
-            TU Wien
-          </a>
-          , and the{" "}
-          <a href="https://www.vis.uni-konstanz.de/" target="_blank" rel="noreferrer">
-            University of Konstanz
-          </a>
-          .
-        </p>
-        <p>
-          <a href={GITHUB_URL} target="_blank" rel="noreferrer">
-            GitHub repository
-          </a>
-          {" · "}
-          <a href=".">Launch {TOOL_NAME}</a>
-        </p>
+        <h2>Developed by</h2>
+        <ul className="landing-logos">
+          {INSTITUTIONS.map((org) => (
+            <li key={org.name}>
+              <a href={org.href} target="_blank" rel="noreferrer" title={org.name}>
+                <img src={org.logo} alt={org.name} />
+              </a>
+            </li>
+          ))}
+        </ul>
       </footer>
+
+      <div className="landing-footer-bar">
+        <ul className="landing-icon-links">
+          {ICON_LINKS.map((l) => (
+            <li key={l.name}>
+              <a href={l.href} target="_blank" rel="noreferrer" title={l.name}>
+                <img src={l.icon} alt={l.name} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

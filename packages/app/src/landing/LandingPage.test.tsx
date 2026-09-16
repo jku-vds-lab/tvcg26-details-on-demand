@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import LandingPage from "./LandingPage";
+import { fireEvent, render, screen } from "@testing-library/react";
+import LandingPage, { INSTITUTIONS } from "./LandingPage";
 import {
   FIGURE_CARDS,
   IRIS_ATTRIBUTION,
@@ -38,8 +38,22 @@ describe("LandingPage", () => {
   it("offers Figure demos and Video hero buttons", () => {
     render(<LandingPage />);
     expect(screen.getByText("Figure demos").getAttribute("href")).toBe("#/figures");
-    // While VIDEO_URL is a placeholder the button scrolls to the Video section.
-    expect(screen.getByText("Video", { selector: "a" }).getAttribute("href")).toBe("#/video");
+    // Both the nav entry and the hero button scroll to the Video section;
+    // YouTube is reached from the link under the player instead.
+    for (const a of screen.getAllByText("Video", { selector: "a" })) {
+      expect(a.getAttribute("href")).toBe("#/video");
+    }
+    // The section shows our own poster until it is clicked, so no YouTube
+    // resources and no player chrome load with the page.
+    expect(screen.queryByTitle("Demo video")).toBeNull();
+    const play = screen.getByLabelText("Play the demo video");
+    fireEvent.click(play);
+    expect(screen.getByTitle("Demo video").getAttribute("src")).toContain(
+      "youtube-nocookie.com/embed/",
+    );
+    expect(
+      screen.getByText("Watch on YouTube").getAttribute("href"),
+    ).toBe(redirectUrl("video"));
   });
 
   it("renders one card per paper figure with all its demo links", () => {
@@ -76,12 +90,13 @@ describe("LandingPage", () => {
     expect(container.textContent).not.toMatch(/[—–]/);
   });
 
-  it("links the affiliations", () => {
+  it("shows every institution as a linked logo in the footer", () => {
     render(<LandingPage />);
     const hrefs = screen.getAllByRole("link").map((a) => a.getAttribute("href"));
-    expect(hrefs).toContain("https://ivia.ch/");
-    expect(hrefs).toContain("https://www.cg.tuwien.ac.at/");
-    expect(hrefs).toContain("https://www.vis.uni-konstanz.de/");
+    for (const org of INSTITUTIONS) {
+      expect(hrefs).toContain(org.href);
+      expect(screen.getByAltText(org.name).getAttribute("src")).toBe(org.logo);
+    }
   });
 
   it("explains the on-demand Gymnasium render insets and their limitation", () => {
